@@ -232,11 +232,11 @@ rails s
 ### Back to the front...end
 
 At this point, we should all be familiar with React and we can build out the fontend.
-If we need some example code to get us going, we can use this provided `app.jsx` code:
+If we need some example code to get us going, we can use this provided `App.js` code:
 
 
 <details>
-<summary>A very simple <code>App.jsx</code></summary>
+<summary>A very simple <code>App.js</code></summary>
 
 ```
 import React, { Component } from 'react';
@@ -316,3 +316,23 @@ export default App;
 
 
 Tada! now we are done and we have a basic React + Rails web application
+
+## 🚀 BONUS: Deployment!
+
+Deploy backend Rails server to Heroku:
+
+- `heroku create app_name`
+- `git push heroku master`
+- `heroku run rails db:migrate`
+- `heroku run rails db:seed`
+- `heroku open` to take us to the url link for our backend server
+
+Deploy frontend React to surge:
+
+- replace `http://localhost:3000` on line 18 of our App.js with a linkt o our heroku backend server
+in terminal:
+- `cd client`
+- `npm run build`
+- `cd build`
+- `surge`
+- follow the prompts to get the link to the deployed site
