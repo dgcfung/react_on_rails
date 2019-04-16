@@ -325,14 +325,14 @@ Deploy backend Rails server to Heroku:
 - `git push heroku master`
 - `heroku run rails db:migrate`
 - `heroku run rails db:seed`
-- `heroku open` to take us to the url link for our backend server
+- `heroku open` to take us to the url link for our backend server.
 
 Deploy frontend React to surge:
 
-- replace `http://localhost:3000` on line 18 of our App.js with a linkt o our heroku backend server
+- replace `http://localhost:3000` on line 18 of our App.js with a link to our heroku backend server.
 in terminal:
 - `cd client`
 - `npm run build`
 - `cd build`
 - `surge`
-- follow the prompts to get the link to the deployed site
+- follow the prompts to get the link to the deployed site.
