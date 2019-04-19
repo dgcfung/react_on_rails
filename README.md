@@ -117,7 +117,7 @@ class TeachersController < ApplicationController
       render json: { message: "ok", teacher: @teacher }
     rescue ActiveRecord::RecordNotFound
       render json: { message: "no teacher matches that ID" }, status: 404
-    rescue Exception
+    rescue StandardError
       render json: { message: "there was some other error" }, status: 500
     end
   end
