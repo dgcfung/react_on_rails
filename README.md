@@ -116,9 +116,9 @@ class TeachersController < ApplicationController
       @teacher = Teacher.find(params[:id])
       render json: { message: "ok", teacher: @teacher }
     rescue ActiveRecord::RecordNotFound
-      render json: { message: "no teacher matches that ID" }, status: 404
-    rescue StandardError
-      render json: { message: "there was some other error" }, status: 500
+      render json: { message: 'no teacher matches that ID' }, status: 404
+    rescue StandardError => e
+      render json: { message: e.to_s }, status: 500
     end
   end
 
