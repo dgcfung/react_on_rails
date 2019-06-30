@@ -239,7 +239,7 @@ If we need some example code to get us going, we can use this provided `App.js` 
 
 ```jsx
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import './App.css';
 
@@ -251,6 +251,7 @@ class App extends Component {
       currentTeacher: null
     };
     this.renderAllTeachers = this.renderAllTeachers.bind(this)
+    this.singleTeacherRender = this.singleTeacherRender.bind(this)
   }
 
   componentDidMount() {
@@ -280,6 +281,7 @@ class App extends Component {
   }
 
   singleTeacherRender() {
+
     const teacher = this.state.currentTeacher
     return (
       <div>
@@ -293,15 +295,17 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Link exact to='/'>School App</Link>
+          <Link exact="true" to='/'>School App</Link>
+        <Switch>
           <Route
-            path="/"
+            exact path="/"
             render={this.renderAllTeachers}
           />
           <Route
-            path="/teachers/:id"
+            exact path="/teachers/:id"
             render={this.singleTeacherRender}
           />
+        </Switch>
         </div>
       </Router>
     );
