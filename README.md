@@ -240,6 +240,7 @@ If we need some example code to get us going, we can use this provided `App.js` 
 ```jsx
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import axios from "axios";
 
 import './App.css';
 
@@ -255,11 +256,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/teachers')
-    .then(res => res.json())
+    axios.get('http://localhost:3000/teachers')
     .then((jsonRes) => {
       this.setState({
-        teachers: jsonRes.teachers,
+        teachers: jsonRes.data.teachers,
       });
     });
   }
@@ -335,12 +335,23 @@ Our rails server is already using port 3000; we need to assign a different port 
 "start": "PORT=3001 react-scripts start", 
 ```
 
+Let's install a few more dependencies as well:
+```
+npm install react-router axios
+```
 
 
 
 Tada! now we are done and we have a basic React + Rails web application
 
-## 🚀 BONUS: Deployment!
+## Bonus 1: Refactor
+
+1. Refactor the react methods for renderAllTeachers and renderSingleTeacher into their own seperate components.
+1. Notice that when you refresh the page for /teachers/:id, it breaks. Why is this? How can that be fixed?
+
+
+
+## 🚀 BONUS 2: Deployment!
 
 Deploy backend Rails server to Heroku:
 
