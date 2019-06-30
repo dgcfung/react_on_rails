@@ -237,7 +237,7 @@ If we need some example code to get us going, we can use this provided `App.js` 
 <details>
 <summary>A very simple <code>App.js</code></summary>
 
-```
+```jsx
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -312,6 +312,26 @@ export default App;
 ```
 
 </details>
+
+Now cd into `client`, and try spinning up the react server with 
+
+```
+npm start
+```
+
+You should see this error:
+
+```
+Something is already running on port 3000
+```
+
+Our rails server is already using port 3000; we need to assign a different port for our react app; to do this, add `PORT=3001` to the beginning the "start" command in the package.json, like so:
+
+```json
+"start": "PORT=3001 react-scripts start", 
+```
+
+
 
 
 Tada! now we are done and we have a basic React + Rails web application
