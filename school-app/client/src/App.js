@@ -52,6 +52,16 @@ class App extends Component {
             />
             <Route
               exact
+              path="/teachers/:id/edit"
+              render={(props)=> <TeacherForm
+                {...props}
+                setTeacher={this.setTeacher}
+                currentTeacher={this.state.currentTeacher}
+                isUpdateForm={true}
+              />} 
+            />
+            <Route
+              exact
               path="/teachers/:id"
               render={(props) => <ShowTeacher 
                 currentTeacher={this.state.currentTeacher}
