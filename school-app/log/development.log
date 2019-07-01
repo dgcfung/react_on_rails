@@ -1,0 +1,757 @@
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE "school-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "school-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (178.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "school-app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (216.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "school-app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (510.0ms)[0m  [1m[35mCREATE DATABASE "school-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (407.0ms)[0m  [1m[35mCREATE DATABASE "school-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3283686587177317440)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTeachers (20190701150201)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (43.3ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "name" character varying, "photo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190701150201_create_teachers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190701150201"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-01 15:02:54.517912"], ["updated_at", "2019-07-01 15:02:54.517912"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3283686587177317440)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mTeacher Create (1.0ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Professor Ari"], ["photo", "http://aribrenner.com/media/images/ari0.jpg"], ["created_at", "2019-07-01 15:06:03.941378"], ["updated_at", "2019-07-01 15:06:03.941378"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bell"], ["photo", "http://uploads.tapatalk-cdn.com/20161123/679e78cd8a276f76f1f962ba2a4c454e.jpg"], ["created_at", "2019-07-01 15:06:03.984743"], ["updated_at", "2019-07-01 15:06:03.984743"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dom"], ["photo", "http://i.imgur.com/JRkmvOv.png"], ["created_at", "2019-07-01 15:06:03.987465"], ["updated_at", "2019-07-01 15:06:03.987465"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Drew"], ["photo", "https://lh5.googleusercontent.com/-Po8zRYag1ns/TgvVNrnnRGI/AAAAAAAAFuQ/UBoR0jidi1s/w506-h750/241140_10150199352146566_646356565_7341938_4425157_o.jpg"], ["created_at", "2019-07-01 15:06:03.989417"], ["updated_at", "2019-07-01 15:06:03.989417"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "J"], ["photo", "https://avatars0.githubusercontent.com/u/12768542?v=4&s=400"], ["created_at", "2019-07-01 15:06:03.991328"], ["updated_at", "2019-07-01 15:06:03.991328"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ramsey"], ["photo", "https://docs.npmjs.com/images/npm.svg"], ["created_at", "2019-07-01 15:06:03.993151"], ["updated_at", "2019-07-01 15:06:03.993151"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "teachers"[0m
+  ↳ db/seeds.rb:15
+Started GET "/teachers" for ::1 at 2019-07-01 11:13:09 -0400
+  [1m[35m (30.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/DZack/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (26.8ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 53ms (Views: 15.7ms | ActiveRecord: 34.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-07-01 11:13:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/teachers/5" for ::1 at 2019-07-01 11:16:26 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/teachers/10" for ::1 at 2019-07-01 11:19:12 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12
+Completed 404 Not Found in 10ms (ActiveRecord: 4.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Teacher with 'id'=10):
+  
+app/controllers/teachers_controller.rb:12:in `show'
+Started GET "/teachers/5" for ::1 at 2019-07-01 11:23:34 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:13
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/teachers/3" for ::1 at 2019-07-01 11:23:37 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:13
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teachers/30" for ::1 at 2019-07-01 11:23:39 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:13
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 11:42:30 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/DZack/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 18ms (Views: 9.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 11:42:46 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 11:43:48 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 11:47:24 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 11:56:46 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/DZack/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 42ms (Views: 9.3ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:05:39 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (4.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:05:43 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (20.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 23ms (Views: 2.3ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:05:52 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:05:56 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (20.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 25ms (Views: 4.1ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:16:29 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:16:32 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:16:36 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (9.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:23:41 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (15.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 19ms (Views: 2.8ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:24:48 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (11.8ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 15ms (Views: 3.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 12:25:01 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:22:15 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (2.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:22:49 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:22:56 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (2.9ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:22:59 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (2.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:23:03 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:23:57 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:24:42 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.9ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:24:47 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (2.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:25:56 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (12.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 16ms (Views: 3.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:26:12 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:27:18 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-07-01 13:27:45 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/DZack/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/DZack/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:27:52 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:29:12 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:29:54 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:30:38 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:31:10 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:32:20 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:32:32 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:33:04 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:34:30 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:39:19 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:39:30 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (2.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:40:35 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (15.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 22ms (Views: 6.9ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:41:38 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 13:58:56 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (1.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:5
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teachers/3" for ::1 at 2019-07-01 14:08:56 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:34
+Completed 200 OK in 254ms (Views: 0.7ms | ActiveRecord: 238.2ms)
+
+
+Started GET "/" for ::1 at 2019-07-01 14:31:52 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/DZack/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/DZack/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 14:31:54 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (98.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:7
+Completed 200 OK in 289ms (Views: 11.3ms | ActiveRecord: 273.4ms)
+
+
+Started GET "/teachers/1" for ::1 at 2019-07-01 14:33:09 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (73.7ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 77ms (Views: 0.5ms | ActiveRecord: 74.1ms)
+
+
+Started GET "/teachers/1" for ::1 at 2019-07-01 14:33:16 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teachers/1" for ::1 at 2019-07-01 14:33:30 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teachers/3" for ::1 at 2019-07-01 14:33:36 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (73.7ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 76ms (Views: 0.6ms | ActiveRecord: 73.7ms)
+
+
+Started GET "/teachers/3" for ::1 at 2019-07-01 14:33:41 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeacher Load (38.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 40ms (Views: 0.5ms | ActiveRecord: 38.3ms)
+
+
+Started POST "/teacher" for ::1 at 2019-07-01 14:36:34 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/teacher"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/teachers" for ::1 at 2019-07-01 14:36:40 -0400
+Processing by TeachersController#create as */*
+  Parameters: {"name"=>"dan", "photo"=>"blah balh", "teacher"=>{"name"=>"dan", "photo"=>"blah balh"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[36mTeacher Create (44.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dan"], ["photo", "blah balh"], ["created_at", "2019-07-01 18:36:40.079431"], ["updated_at", "2019-07-01 18:36:40.079431"]]
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:34
+Completed 200 OK in 99ms (Views: 1.6ms | ActiveRecord: 46.6ms)
+
+
+Started PUT "/teachers" for ::1 at 2019-07-01 14:36:51 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/teachers"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/teachers" for ::1 at 2019-07-01 14:36:55 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/teachers"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/teachers/7/edit" for ::1 at 2019-07-01 14:37:04 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/teachers/7/edit"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/teachers/7" for ::1 at 2019-07-01 14:37:28 -0400
+Processing by TeachersController#update as */*
+  Parameters: {"name"=>"dan2", "photo"=>"blah balh", "id"=>"7", "teacher"=>{"name"=>"dan2", "photo"=>"blah balh"}}
+  [1m[36mTeacher Load (0.8ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:47
+  [1m[36mTeacher Update (1.1ms)[0m  [1m[33mUPDATE "teachers" SET "name" = $1, "updated_at" = $2 WHERE "teachers"."id" = $3[0m  [["name", "dan2"], ["updated_at", "2019-07-01 18:37:28.735700"], ["id", 7]]
+  ↳ app/controllers/teachers_controller.rb:47
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:47
+Completed 200 OK in 87ms (Views: 0.6ms | ActiveRecord: 42.7ms)
+
+
+Started DELETE "/teachers/7" for ::1 at 2019-07-01 14:37:36 -0400
+Processing by TeachersController#destroy as */*
+  Parameters: {"name"=>"dan2", "photo"=>"blah balh", "id"=>"7", "teacher"=>{"name"=>"dan2", "photo"=>"blah balh"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:60
+  [1m[36mTeacher Destroy (2.2ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/teachers_controller.rb:60
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:60
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/teachers" for ::1 at 2019-07-01 14:40:17 -0400
+Processing by TeachersController#create as */*
+  Parameters: {"name"=>"Dan Goldman", "photo"=>"bla blah", "teacher"=>{"name"=>"Dan Goldman", "photo"=>"bla blah"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[36mTeacher Create (0.9ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dan Goldman"], ["photo", "bla blah"], ["created_at", "2019-07-01 18:40:17.317188"], ["updated_at", "2019-07-01 18:40:17.317188"]]
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:34
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/teachers" for ::1 at 2019-07-01 14:40:33 -0400
+Processing by TeachersController#create as */*
+  Parameters: {"nae"=>"Dan Goldman", "photo"=>"bla blah", "teacher"=>{"photo"=>"bla blah"}}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("photo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["photo", "bla blah"], ["created_at", "2019-07-01 18:40:33.425837"], ["updated_at", "2019-07-01 18:40:33.425837"]]
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:34
+Completed 200 OK in 50ms (Views: 0.5ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/teachers" for ::1 at 2019-07-01 14:41:00 -0400
+Processing by TeachersController#create as */*
+  Parameters: {"name"=>"Dan Goldman", "photo"=>"bla blah", "teacher"=>{"name"=>"Dan Goldman", "photo"=>"bla blah"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dan Goldman"], ["photo", "bla blah"], ["created_at", "2019-07-01 18:41:00.082087"], ["updated_at", "2019-07-01 18:41:00.082087"]]
+  ↳ app/controllers/teachers_controller.rb:34
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:34
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/teachers/10" for ::1 at 2019-07-01 14:41:40 -0400
+Processing by TeachersController#update as */*
+  Parameters: {"name"=>"Dan Zachary Goldman", "photo"=>"bla blah", "id"=>"10", "teacher"=>{"name"=>"Dan Zachary Goldman", "photo"=>"bla blah"}}
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:47
+  [1m[36mTeacher Update (0.4ms)[0m  [1m[33mUPDATE "teachers" SET "name" = $1, "updated_at" = $2 WHERE "teachers"."id" = $3[0m  [["name", "Dan Zachary Goldman"], ["updated_at", "2019-07-01 18:41:40.173755"], ["id", 10]]
+  ↳ app/controllers/teachers_controller.rb:47
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:47
+Completed 200 OK in 46ms (Views: 1.0ms | ActiveRecord: 34.7ms)
+
+
+Started DELETE "/teachers/10" for ::1 at 2019-07-01 14:42:20 -0400
+Processing by TeachersController#destroy as */*
+  Parameters: {"name"=>"Dan Zachary Goldman", "photo"=>"bla blah", "id"=>"10", "teacher"=>{"name"=>"Dan Zachary Goldman", "photo"=>"bla blah"}}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teachers_controller.rb:60
+  [1m[36mTeacher Destroy (41.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/teachers_controller.rb:60
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teachers_controller.rb:60
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 82.0ms)
+
+
+Started GET "/teachers" for ::1 at 2019-07-01 14:44:42 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/controllers/teachers_controller.rb:7
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers/4" for ::1 at 2019-07-01 14:44:51 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeacher Load (4.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/teachers/4" for ::1 at 2019-07-01 14:44:54 -0400
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:69
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
