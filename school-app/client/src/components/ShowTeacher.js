@@ -16,6 +16,11 @@ class ShowTeacher extends Component {
     } 
   }
 
+   handleDelete = async ()=>{
+    await axios.delete('http://localhost:3000/teachers/' +  this.props.currentTeacher.id)
+    this.props.handleDeleteTeacher(this.props.currentTeacher)
+    this.props.history.push('/')
+  }
 
   render() {
     const teacher = this.props.currentTeacher
@@ -23,6 +28,7 @@ class ShowTeacher extends Component {
       <div>
         <h1>{teacher.name}</h1>
         <img alt={teacher.name} src={teacher.photo} />
+        <button onClick={this.handleDelete}> delete!!!</button>
       </div>
     )
     }

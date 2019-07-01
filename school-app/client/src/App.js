@@ -27,6 +27,12 @@ class App extends Component {
     });
   };
 
+  handleDeleteTeacher = (removedTeacher)=> {
+      this.setState({
+        teachers: this.state.teachers.filter(teacher => teacher.id !== removedTeacher.id)
+      })
+  }
+
   setTeacher = (teacher) => {
     this.setState({
       currentTeacher: teacher
@@ -66,6 +72,7 @@ class App extends Component {
               render={(props) => <ShowTeacher 
                 currentTeacher={this.state.currentTeacher}
                 setTeacher={this.setTeacher}
+                handleDeleteTeacher={this.handleDeleteTeacher}
                 {...props}
                 />}
             />
