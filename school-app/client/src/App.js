@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
 import AllTeachers from "./components/AllTeachers";
 import ShowTeacher from "./components/ShowTeacher";
+import TeacherForm from "./components/TeacherForm"
 
 import "./App.css";
 
@@ -40,6 +41,15 @@ class App extends Component {
             School App
           </Link>
           <Switch>
+            <Route 
+              exact 
+              path="/teachers/new"
+              render={(props)=> <TeacherForm
+                {...props}
+                setTeacher={this.setTeacher}
+              />
+              }
+            />
             <Route
               exact
               path="/teachers/:id"
