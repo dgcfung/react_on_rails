@@ -305,12 +305,13 @@ export default App;
 
 </details>
 
-### Let's add our `AllTeacher.js` component:
+### Let's add our `AllTeachers.js` component:
 
 <details>
+  <summary>The `AllTeachers.js` component</summary>
   
   ```jsx
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class AllTeachers extends Component {
@@ -335,7 +336,7 @@ componentDidMount() {
 export default AllTeachers
 ```
 </details>
-Let's add our `AllTeacher.js` component:
+
 
 Now cd into `client`, and try spinning up the react server with 
 
