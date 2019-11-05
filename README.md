@@ -322,7 +322,7 @@ export default App;
 ### Let's add our `AllTeachers.js` component:
 
 <details>
-  <summary>The `AllTeachers.js` component</summary>
+  <summary>The <code>AllTeachers.js</code> component</summary>
   
   ```jsx
 import React, { Component } from 'react';
@@ -351,6 +351,46 @@ export default AllTeachers
 ```
 </details>
 
+### Now lets add our `ShowTeacher.js` Component
+    
+```jsx
+import React, { Component } from 'react';
+import axios from "axios";
+
+
+class ShowTeacher extends Component {
+
+  constructor(props){
+    super(props)
+  }
+  async componentDidMount(){
+    const idParams = this.props.match.params.id
+    if (this.props.currentTeacher.id !== idParams){
+      const teacherData = await axios.get("http://localhost:3000/teachers/" + idParams)
+      this.props.setTeacher(teacherData.data.teacher)
+    } 
+  }
+
+   handleDelete = async ()=>{
+    await axios.delete('http://localhost:3000/teachers/' +  this.props.currentTeacher.id)
+    this.props.handleDeleteTeacher(this.props.currentTeacher)
+    this.props.history.push('/')
+  }
+
+  render() {
+    const teacher = this.props.currentTeacher
+    return (
+      <div>
+        <h1>{teacher.name}</h1>
+        <img alt={teacher.name} src={teacher.photo} />
+        <button onClick={this.handleDelete}> delete!!!</button>
+      </div>
+    )
+    }
+}
+
+export default ShowTeacher;
+```
 
 
 Tada! now we are done and we have a basic React + Rails web application
