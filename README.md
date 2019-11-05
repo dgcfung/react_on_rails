@@ -305,6 +305,38 @@ export default App;
 
 </details>
 
+### Let's add our `AllTeacher.js` component:
+
+<details>
+  
+  ```jsx
+ import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+class AllTeachers extends Component {
+ 
+componentDidMount() {
+    if(!this.props.teachersLoaded) {
+        this.props.getAllTeachers()
+    }
+ }
+
+ render() {
+    return this.props.teachers.map(teacher => (
+        <div key={teacher.id}>
+          <Link to={`/teachers/${teacher.id}`} onClick={() => this.props.setTeacher(teacher)}> Show Teacher </Link>
+          <img alt={teacher.name} src={teacher.photo} />
+          <hr />
+        </div>
+      ))
+    }
+}
+
+export default AllTeachers
+```
+</details>
+Let's add our `AllTeacher.js` component:
+
 Now cd into `client`, and try spinning up the react server with 
 
 ```
