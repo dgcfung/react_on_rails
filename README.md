@@ -236,77 +236,64 @@ If we need some example code to get us going, we can use this provided `App.js` 
 
 
 <details>
-<summary>A very simple <code>App.js</code></summary>
+<summary>Let's start with<code>App.js</code></summary>
 
 ```jsx
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
+import AllTeachers from "./components/AllTeachers";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  
+  constructor(props){
+    super()
     this.state = {
       teachers: [],
-      currentTeacher: null
+      currentTeacher: {},
+      teachersLoaded: false
     };
-    this.renderAllTeachers = this.renderAllTeachers.bind(this)
-    this.singleTeacherRender = this.singleTeacherRender.bind(this)
   }
-
-  componentDidMount() {
-    axios.get('http://localhost:3000/teachers')
-    .then((jsonRes) => {
+ 
+  getAllTeachers = () => {
+    axios.get("http://localhost:3000/teachers").then(jsonRes => {
       this.setState({
         teachers: jsonRes.data.teachers,
+        teachersLoaded: true
       });
     });
-  }
+  };
 
-  setTeacher(teacher) {
+  setTeacher = (teacher) => {
     this.setState({
       currentTeacher: teacher
-    })
-  }
-
-  renderAllTeachers() {
-    return this.state.teachers.map(teacher => (
-      <div key={teacher.id}>
-        <Link to={`/teachers/${teacher.id}`} onClick={() => this.setTeacher(teacher)}>{teacher.name}</Link>
-        <img alt={teacher.name} src={teacher.photo} />
-        <hr />
-      </div>
-    ))
-  }
-
-  singleTeacherRender() {
-
-    const teacher = this.state.currentTeacher
-    return (
-      <div>
-        <h1>{teacher.name}</h1>
-        <img alt={teacher.name} src={teacher.photo} />
-      </div>
-    )
-  }
+    });
+  };
 
   render() {
     return (
       <Router>
         <div className="App">
-          <Link exact="true" to='/'>School App</Link>
-        <Switch>
-          <Route
-            exact path="/"
-            render={this.renderAllTeachers}
-          />
-          <Route
-            exact path="/teachers/:id"
-            render={this.singleTeacherRender}
-          />
-        </Switch>
+          <Link exact="true" to="/">
+            School App
+          </Link>
+          <Switch>
+            
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <AllTeachers
+                  getAllTeachers={this.getAllTeachers}
+                  teachers={this.state.teachers}
+                  teachersLoaded={this.state.teachersLoaded}
+                  setTeacher={this.setTeacher}
+                />
+              )}
+            />
+          </Switch>
         </div>
       </Router>
     );
