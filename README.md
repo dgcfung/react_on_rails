@@ -174,6 +174,7 @@ Setting Rails up to work with React is a multi-step process -- similar to settin
 Just like in Express, the React app in a React/Rails setup should be generated with `create-react-app`. (NOTE: There are a couple of gems like `react-rails` and `react-on-rails`. **DO NOT USE THEM. THEY ARE NOT WORTH IT.**)
 
 In the root directory of the Rails app, type `create-react-app client`.
+Next `npm install axios react-router-dom`
 
 ### Installing Cors in rails
 
