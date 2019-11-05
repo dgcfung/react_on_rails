@@ -514,6 +514,31 @@ class TeacherForm extends Component {
 
 export default TeacherForm;
 ```
+
+### Now we need to adjust our App.js
+
+```jsx
+            <Route 
+              exact 
+              path="/teachers/new"
+              render={(props)=> <TeacherForm
+                {...props}
+                setTeacher={this.setTeacher}
+              />
+              }
+            />
+            <Route
+              exact
+              path="/teachers/:id/edit"
+              render={(props)=> <TeacherForm
+                {...props}
+                setTeacher={this.setTeacher}
+                currentTeacher={this.state.currentTeacher}
+                isUpdateForm={true}
+              />} 
+            />
+```
+
 Tada! now we are done and we have a basic React + Rails web application
 
 ## 🚀 BONUS: Deployment!
