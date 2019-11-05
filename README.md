@@ -174,7 +174,21 @@ Setting Rails up to work with React is a multi-step process -- similar to settin
 Just like in Express, the React app in a React/Rails setup should be generated with `create-react-app`. (NOTE: There are a couple of gems like `react-rails` and `react-on-rails`. **DO NOT USE THEM. THEY ARE NOT WORTH IT.**)
 
 In the root directory of the Rails app, type `create-react-app client`.
-Next `npm install axios react-router-dom`
+
+Let's install a few more dependencies as well:
+```
+npm install react-router axios
+```
+Our rails server is already using port 3000; we need to assign a different port for our react app; to do this, add `PORT=3001` to the beginning the "start" command in the package.json, like so:
+
+```json
+"start": "PORT=3001 react-scripts start", 
+```
+Now cd into `client`, and try spinning up the react server with 
+
+```
+npm start
+```
 
 ### Installing Cors in rails
 
@@ -336,30 +350,6 @@ componentDidMount() {
 export default AllTeachers
 ```
 </details>
-
-
-Now cd into `client`, and try spinning up the react server with 
-
-```
-npm start
-```
-
-You should see this error:
-
-```
-Something is already running on port 3000
-```
-
-Our rails server is already using port 3000; we need to assign a different port for our react app; to do this, add `PORT=3001` to the beginning the "start" command in the package.json, like so:
-
-```json
-"start": "PORT=3001 react-scripts start", 
-```
-
-Let's install a few more dependencies as well:
-```
-npm install react-router axios
-```
 
 
 
