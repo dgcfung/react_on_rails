@@ -392,6 +392,30 @@ class ShowTeacher extends Component {
 export default ShowTeacher;
 ```
 
+### Let's update our App.js
+  
+```jsx
+           <Route
+              exact
+              path="/teachers/:id"
+              render={(props) => <ShowTeacher 
+                currentTeacher={this.state.currentTeacher}
+                setTeacher={this.setTeacher}
+                handleDeleteTeacher={this.handleDeleteTeacher}
+                {...props}
+                />}
+            />
+ ```
+             
+ And our handleDeleteTeacher method
+ 
+ ```jsx
+handleDeleteTeacher = (removedTeacher)  => {
+  this.setState({
+  teachers: this.state.teachers.filter(teacher => teacher.id !== removedTeacher.id)
+  })
+ }
+ ```
 
 Tada! now we are done and we have a basic React + Rails web application
 
