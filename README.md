@@ -332,14 +332,7 @@ npm install react-router axios
 
 Tada! now we are done and we have a basic React + Rails web application
 
-## Bonus 1: Refactor
-
-1. Refactor the react methods for renderAllTeachers and renderSingleTeacher into their own seperate components.
-1. Notice that when you refresh the page for /teachers/:id, it breaks. Why is this? How can that be fixed?
-
-
-
-## 🚀 BONUS 2: Deployment!
+## 🚀 BONUS: Deployment!
 
 Deploy backend Rails server to Heroku:
 
