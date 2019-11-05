@@ -60,11 +60,11 @@ You can either move the provided `seed.rb` into your `/db/` directory or copy an
 
 ```
 Teacher.create!(name: 'Professor Ari', photo: 'http://aribrenner.com/media/images/ari0.jpg')
-Teacher.create!(name: 'Bell', photo: 'http://uploads.tapatalk-cdn.com/20161123/679e78cd8a276f76f1f962ba2a4c454e.jpg')
-Teacher.create!(name: 'Dom', photo: 'http://i.imgur.com/JRkmvOv.png')
-Teacher.create(name: 'Drew', photo: 'https://lh5.googleusercontent.com/-Po8zRYag1ns/TgvVNrnnRGI/AAAAAAAAFuQ/UBoR0jidi1s/w506-h750/241140_10150199352146566_646356565_7341938_4425157_o.jpg')
-Teacher.create!(name: 'J', photo: 'https://avatars0.githubusercontent.com/u/12768542?v=4&s=400')
-Teacher.create!(name: 'Ramsey', photo: 'https://docs.npmjs.com/images/npm.svg')
+Teacher.create!(name: 'Bell', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffriday87central.files.wordpress.com%2F2011%2F05%2Fpower-person-solo1.jpg&f=1&nofb=1')
+Teacher.create!(name: 'Dom', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.wisegeek.com%2Felderly-woman-looking-up-at-sky.jpg&f=1&nofb=1')
+Teacher.create(name: 'Drew', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F5%2F50%2FRoyall_Allah_In_Person_UNOI.png&f=1&nofb=1')
+Teacher.create!(name: 'J', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.q4CMw87G0nupV1I8OL-ZtwHaHa%26pid%3DApi&f=1')
+Teacher.create!(name: 'Ramsey', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.barrett.com.au%2Fblogs%2FSalesBlog%2Fwp-content%2Fuploads%2F2011%2F09%2Fbold-narcissist-with-brush-mirror.jpg&f=1&nofb=1')
 
 puts "#{Teacher.count} teachers created!"
 ```
