@@ -1,11 +1,5 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  SOFTWARE ENGINEERING IMMERSIVE
 
-## Getting started
-
-1. Fork
-1. Create a feature branch
-1. Clone
-
 # Rails as an API!
 
 ### Learning Objectives
@@ -59,7 +53,7 @@ You can either move the provided `seed.rb` into your `/db/` directory or copy an
 <summary>seed.rb</summary>
 
 ```
-Teacher.create!(name: 'Professor Ari', photo: 'http://aribrenner.com/media/images/ari0.jpg')
+Teacher.create!(name: 'Mr. Nacho', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.oldelpaso.co.uk%2F-%2Fmedia%2Foep%2Fuk%2Frecipes%2Feasy-beef-nachos-hero.jpg&f=1&nofb=1')
 Teacher.create!(name: 'Bell', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffriday87central.files.wordpress.com%2F2011%2F05%2Fpower-person-solo1.jpg&f=1&nofb=1')
 Teacher.create!(name: 'Dom', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.wisegeek.com%2Felderly-woman-looking-up-at-sky.jpg&f=1&nofb=1')
 Teacher.create(name: 'Drew', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F5%2F50%2FRoyall_Allah_In_Person_UNOI.png&f=1&nofb=1')
@@ -161,6 +155,96 @@ try {
 }
 ```
 
+## Don't forget to test your routes!
+
+### Next add the rest of your controller methods
+
+<details>
+<summary>Peek here to see the completed controller</summary>
+  
+```ruby
+class TeachersController < ApplicationController
+    before_action :set_teacher, only: [:show, :update, :destroy]
+  
+    def index
+        teachers = Teacher.all
+  
+        render json: {
+            message: "ok",
+            teachers: teachers
+        }
+    end 
+  
+    def show 
+        begin
+            render json: {
+                message: "ok",
+                teacher: @teacher
+            }
+        rescue ActiveRecord::RecordNotFound
+            render json: {
+                message: "teacher not found with that ID"
+            }, status: 404
+  
+        rescue StandardError => e
+            render json: {
+                message: e.to_s
+            }, status: 500
+        end
+    end
+  
+    def create 
+      # puts params
+      puts 'creating teacher'
+      puts params
+        teacher =  Teacher.new(teacher_params)
+      puts "??", teacher
+        if teacher.save 
+            render json: {
+                message: "ok",
+                teacher: teacher
+            }
+        else 
+            render json: {
+                message: teacher.errors
+            }, status: 500
+        end
+    end
+  
+    def update 
+        if @teacher.update(teacher_params)
+            render json: {
+                message: "ok",
+                teacher: @teacher
+            }
+        else 
+            render json: {
+                message: @teacher.errors
+            }, status: 500
+        end
+    end
+  
+    def destroy
+        @teacher.destroy
+        render json: {
+            message: "ok"
+        }
+    end
+  
+    private 
+  
+    def set_teacher 
+        @teacher = Teacher.find(params[:id])
+    end
+  
+    def teacher_params
+      params.permit(:name, :photo)
+    end
+  end
+  ```
+  
+</details>
+
 [Here's a link to the MDN docs.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 
 # Part two: Hooking Rails up to React!
@@ -173,11 +257,11 @@ Setting Rails up to work with React is a multi-step process -- similar to settin
 
 Just like in Express, the React app in a React/Rails setup should be generated with `create-react-app`. (NOTE: There are a couple of gems like `react-rails` and `react-on-rails`. **DO NOT USE THEM. THEY ARE NOT WORTH IT.**)
 
-In the root directory of the Rails app, type `create-react-app client`.
+In the root directory of the Rails app, type `npx create-react-app client`.
 
 Let's install a few more dependencies as well:
 ```
-npm install react-router axios
+npm install react-router-dom axios
 ```
 Our rails server is already using port 3000; we need to assign a different port for our react app; to do this, add `PORT=3001` to the beginning the "start" command in the package.json, like so:
 
@@ -664,3 +748,5 @@ in terminal:
 - `cd build`
 - `surge`
 - follow the prompts to get the link to the deployed site.
+
+
