@@ -53,7 +53,7 @@ You can either move the provided `seed.rb` into your `/db/` directory or copy an
 <summary>seed.rb</summary>
 
 ```
-Teacher.create!(name: 'Mr. Nacho', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.oldelpaso.co.uk%2F-%2Fmedia%2Foep%2Fuk%2Frecipes%2Feasy-beef-nachos-hero.jpg&f=1&nofb=1')
+Teacher.create!(name: 'Mr. Nacho', photo: 'http://www.bsideblog.com/wp-content/uploads/2011/05/macho-man-randy-savage.jpg')
 Teacher.create!(name: 'Bell', photo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffriday87central.files.wordpress.com%2F2011%2F05%2Fpower-person-solo1.jpg&f=1&nofb=1')
 Teacher.create!(name: 'Dom', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.wisegeek.com%2Felderly-woman-looking-up-at-sky.jpg&f=1&nofb=1')
 Teacher.create(name: 'Drew', photo: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F5%2F50%2FRoyall_Allah_In_Person_UNOI.png&f=1&nofb=1')
